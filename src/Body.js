@@ -1,13 +1,10 @@
-
-
+import Stories from './Stories'
 
 export default function Body(){
     return(
     <div className="corpo">
         <div className="esquerda">
-            <div className="stories">
-                <div className="story"></div>
-            </div>
+            <Stories />
             <div className="posts">
                 <div className="post"></div>
             </div>
