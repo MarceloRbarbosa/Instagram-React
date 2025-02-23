@@ -20,7 +20,7 @@ export default function Stories(){
      )
  }
 
- function Story({user, imagem}){
+function Story({user, imagem}){
     return(    
     <li className="story">
         <div className='imagem'>
