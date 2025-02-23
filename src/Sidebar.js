@@ -1,26 +1,14 @@
+import Suggestion from "./Suggestions";
 import User from "./User";
-
+import Suggestions from "./Suggestions";
 
 export default function Sidebar(){
     return(
 <>
 <div className="sidebar">
         <User />
-        
-                    
-        
-
-
-        <div className="sugestoes">
-            <div className="titulo">
-            <p className="texto"> Sugestões para você</p>
-            <strong>Ver tudo</strong>
-            </div>
-            
-            <div className="sugestao"></div>
-            
-            
-        </div>
+         <Suggestions />
+               
 
         <div className="links">
             <div className="copyright"></div>
