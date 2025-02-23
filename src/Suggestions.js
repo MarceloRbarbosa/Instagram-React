@@ -36,8 +36,5 @@ function Sugestao({icone, titulo}){
     </div>       
     <span className="seguir">Seguir</span> 
 </li>
-
-
-
     )
 }

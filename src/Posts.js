@@ -9,7 +9,7 @@ const postagens = [
 export default function Posts(){
   return (
     <>
-    <ul className="post">
+    <ul>
 {postagens.map(p => <Post user={p.user} foto={p.fotoPerfil} postagem = {p.postagem} curtidas={p.qtdCurtidas} seguidor={p.seguidor} nomeSeguidor={p.nomeSeguidor}/>)}
     </ul>
     </>
@@ -19,7 +19,7 @@ export default function Posts(){
 
 function Post({user, foto, postagem, curtidas, seguidor, nomeSeguidor}){
 return (
-<li> 
+<li className="post"> 
     <div className="topo">
         <div className="usuario">
         <img src={foto}></img>
@@ -43,7 +43,7 @@ return (
         
         <div className="curtidas">
               <img src={seguidor}/>
-             <p> curtido por <strong>{nomeSeguidor}</strong> e <strong>outras {curtidas} pessoas</strong></p>
+             <p>curtido por <strong>{nomeSeguidor}</strong> e <strong>outras {curtidas} pessoas</strong></p>
         </div> 
     </div>
 </li>

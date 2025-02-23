@@ -10,7 +10,7 @@ export default function NavBar(){
                <div className="pesquisa">
                    <input value="Pesquisar"></input>
                </div>    
-               <div>
+               <div className="icones">
                   <ion-icon name="paper-plane-outline"></ion-icon>
                   <ion-icon name="compass-outline"></ion-icon>
                   <ion-icon name="heart-outline"></ion-icon>
@@ -19,4 +19,4 @@ export default function NavBar(){
                </div>    
         </div>
     )
-    }
+}
