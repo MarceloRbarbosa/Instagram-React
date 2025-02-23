@@ -1,7 +1,8 @@
 import { createRoot } from "react-dom/client";
 import NavBar from './NavBar';
 import Body from "./Body";
-
+import Stories from "./Stories";
+import Posts from "./Posts";
 
 
 function App(){

@@ -46,13 +46,6 @@ return (
              <p> curtido por <strong>{nomeSeguidor}</strong> e <strong>outras {curtidas} pessoas</strong></p>
         </div> 
     </div>
-
-    
-
-
-
-
 </li>
 )
-
 }
