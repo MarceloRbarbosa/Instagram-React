@@ -1,13 +1,17 @@
+import React, { useState } from "react"
+
+
 const postagens = [
     {user:'meowed',fotoPerfil:'../assets/img/meowed.svg', postagem:'../assets/img/gato-telefone.svg',qtdCurtidas :'101523', seguidor:'../assets/img/respondeai.svg', nomeSeguidor: 'respondeai'},
     {user:'meowed',fotoPerfil:'../assets/img/barked.svg', postagem:'../assets/img/dog.svg',qtdCurtidas :'99159', seguidor:'../assets/img/adorable_animals.svg', nomeSeguidor: 'adorable_animals'},
     {user:'meowed',fotoPerfil:'../assets/img/meowed.svg', postagem:'../assets/img/gato-telefone.svg',qtdCurtidas :'101523', seguidor:'../assets/img/respondeai.svg', nomeSeguidor: 'respondeai'}
 ]
 
-
+const botaoSalvar = 'bookmark-outline'
+ 
 
 export default function Posts(){
-  return (
+    return (
     <>
     <ul>
 {postagens.map(p => <Post user={p.user} foto={p.fotoPerfil} postagem = {p.postagem} curtidas={p.qtdCurtidas} seguidor={p.seguidor} nomeSeguidor={p.nomeSeguidor}/>)}
@@ -18,7 +22,10 @@ export default function Posts(){
 
 
 function Post({user, foto, postagem, curtidas, seguidor, nomeSeguidor}){
-return (
+    const [status, setStatus] = React.useState(botaoSalvar);
+
+
+    return (
 <li className="post"> 
     <div className="topo">
         <div className="usuario">
@@ -34,10 +41,10 @@ return (
             <div>
             <ion-icon name="heart-outline"></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
-            <ion-icon name="chatbubble-outline"></ion-icon>
+            <ion-icon name="paper-plane-outline"></ion-icon>
             </div>  
             <div >
-            <ion-icon name="bookmark-outline"></ion-icon>
+            <ion-icon onClick={salvo} name={status}></ion-icon>
             </div>
         </div>
         
@@ -48,4 +55,10 @@ return (
     </div>
 </li>
 )
+
+function salvo(){
+    const novoStatus = 'bookmark';
+(status === 'bookmark-outline') ? setStatus(novoStatus) : setStatus(botaoSalvar);
+}
+
 }
