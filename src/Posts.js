@@ -1,14 +1,11 @@
 import React, { useState } from "react"
-
+import Post from "./Post"
 
 const postagens = [
-    {user:'meowed',fotoPerfil:'../assets/img/meowed.svg', postagem:'../assets/img/gato-telefone.svg',qtdCurtidas :'101523', seguidor:'../assets/img/respondeai.svg', nomeSeguidor: 'respondeai'},
-    {user:'meowed',fotoPerfil:'../assets/img/barked.svg', postagem:'../assets/img/dog.svg',qtdCurtidas :'99159', seguidor:'../assets/img/adorable_animals.svg', nomeSeguidor: 'adorable_animals'},
-    {user:'meowed',fotoPerfil:'../assets/img/meowed.svg', postagem:'../assets/img/gato-telefone.svg',qtdCurtidas :'101523', seguidor:'../assets/img/respondeai.svg', nomeSeguidor: 'respondeai'}
+    {user:'meowed',fotoPerfil:'../assets/img/meowed.svg', postagem:'../assets/img/gato-telefone.svg',qtdCurtidas :101523, seguidor:'../assets/img/respondeai.svg', nomeSeguidor: 'respondeai'},
+    {user:'Barked',fotoPerfil:'../assets/img/barked.svg', postagem:'../assets/img/dog.svg',qtdCurtidas :99159, seguidor:'../assets/img/adorable_animals.svg', nomeSeguidor: 'adorable_animals'},
+    {user:'9gag',fotoPerfil:'../assets/img/9gag.svg', postagem:'../assets/img/gato-telefone.svg',qtdCurtidas : 87550, seguidor:'../assets/img/respondeai.svg', nomeSeguidor: 'respondeai'}
 ]
-
-const botaoSalvar = 'bookmark-outline'
- 
 
 export default function Posts(){
     return (
@@ -20,45 +17,3 @@ export default function Posts(){
     )
 }
 
-
-function Post({user, foto, postagem, curtidas, seguidor, nomeSeguidor}){
-    const [status, setStatus] = React.useState(botaoSalvar);
-
-
-    return (
-<li className="post"> 
-    <div className="topo">
-        <div className="usuario">
-        <img src={foto}></img>
-        <strong >{user}</strong>
-    </div> 
-    <ion-icon name="ellipsis-horizontal-outline"></ion-icon></div>
-    <div className="conteudo">
-        <img src={postagem}/>
-    </div>
-    <div className="fundo">
-        <div className="acoes">
-            <div>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="chatbubble-outline"></ion-icon>
-            <ion-icon name="paper-plane-outline"></ion-icon>
-            </div>  
-            <div >
-            <ion-icon onClick={salvo} name={status}></ion-icon>
-            </div>
-        </div>
-        
-        <div className="curtidas">
-              <img src={seguidor}/>
-             <p>curtido por <strong>{nomeSeguidor}</strong> e <strong>outras {curtidas} pessoas</strong></p>
-        </div> 
-    </div>
-</li>
-)
-
-function salvo(){
-    const novoStatus = 'bookmark';
-(status === 'bookmark-outline') ? setStatus(novoStatus) : setStatus(botaoSalvar);
-}
-
-}
