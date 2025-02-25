@@ -1,4 +1,4 @@
-import Suggestion from "./Suggestions";
+
 import User from "./User";
 import Suggestions from "./Suggestions";
 
